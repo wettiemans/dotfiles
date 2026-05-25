@@ -123,4 +123,6 @@ export COMPOSER_MEMORY_LIMIT=-1
 # 1Password gh
 source /Users/jan/.config/op/plugins.sh
 
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled --resolve-engines)"
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy=recursive --corepack-enabled --resolve-engines)"
+fi
